@@ -124,11 +124,12 @@ class StoryItem {
     EdgeInsetsGeometry? captionOuterPadding,
     Duration? duration,
     Widget? customWidget,
+    Decoration? decoration,
   }) {
     return StoryItem(
       Container(
         key: key,
-        color: Colors.black,
+        decoration: decoration,
         child: Stack(
           children: <Widget>[
             StoryImage.url(
@@ -238,11 +239,12 @@ class StoryItem {
     Widget? loadingWidget,
     Widget? errorWidget,
     Widget? customWidget,
+    Decoration? decoration,
   }) {
     return StoryItem(
         Container(
           key: key,
-          color: Colors.black,
+          decoration: decoration,
           child: Stack(
             children: <Widget>[
               StoryVideo.url(

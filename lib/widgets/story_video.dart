@@ -45,12 +45,14 @@ class StoryVideo extends StatefulWidget {
   final VideoLoader videoLoader;
   final Widget? loadingWidget;
   final Widget? errorWidget;
+  final Decoration? decoration;
 
   StoryVideo(this.videoLoader, {
     Key? key,
     this.storyController,
     this.loadingWidget,
     this.errorWidget,
+    this.decoration,
   }) : super(key: key ?? UniqueKey());
 
   static StoryVideo url(String url, {
@@ -59,6 +61,7 @@ class StoryVideo extends StatefulWidget {
     Key? key,
     Widget? loadingWidget,
     Widget? errorWidget,
+    Decoration? decoration,
   }) {
     return StoryVideo(
       VideoLoader(url, requestHeaders: requestHeaders),
@@ -66,6 +69,7 @@ class StoryVideo extends StatefulWidget {
       key: key,
       loadingWidget: loadingWidget,
       errorWidget: errorWidget,
+      decoration: decoration,
     );
   }
 
@@ -148,7 +152,7 @@ class StoryVideoState extends State<StoryVideo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
+      decoration: widget.decoration,
       height: double.infinity,
       width: double.infinity,
       child: getContentView(),
